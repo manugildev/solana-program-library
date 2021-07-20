@@ -390,6 +390,7 @@ fn main() {
             let borrow_fee = value_of::<f64>(arg_matches, "borrow_fee").unwrap();
             let flash_loan_fee = value_of::<f64>(arg_matches, "flash_loan_fee").unwrap();
             let host_fee_percentage = value_of(arg_matches, "host_fee_percentage").unwrap();
+            let deposit_limit = value_of(arg_matches, "deposit_limit").unwrap();
 
             let borrow_fee_wad = (borrow_fee * WAD as f64) as u64;
             let flash_loan_fee_wad = (flash_loan_fee * WAD as f64) as u64;
@@ -410,6 +411,7 @@ fn main() {
                         flash_loan_fee_wad,
                         host_fee_percentage,
                     },
+                    deposit_limit,
                 },
                 source_liquidity_pubkey,
                 source_liquidity_owner_keypair,
